@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+        <!--Mail template before 45 dAYS-->
+        <record id="email_template_insurance_followup_level_before45" model="email.template">
+            <field name="name">First polite payment follow-up reminder email Before 45 days</field>
+            <field name="email_from">${object.user_id.email or ''}</field>
+            <field name="subject">${object.user_id.company_id.name} Payment Reminder</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_insurance_followup"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
+
+    <p>Dear ${object.partner_id.name},</p>
+    <p>
+    This is the 1st reminder mail before 45 days of your insurance policy that your payment date is ${object.date_due} .
+    So Would you please make payment before the ${object.date_due}.
+    </p>
+<br/>
+Thank You,
+<br/>
+   <br/>
+${object.user_id.name}
+
+
+</div>
+            ]]></field>
+        </record>
+        <!--Mail template before 15 dAYS-->
+        <record id="email_template_insurance_followup_level_before15" model="email.template">
+            <field name="name">First polite payment follow-up reminder email Before 15 days</field>
+            <field name="email_from">${object.user_id.email or ''}</field>
+            <field name="subject">${object.user_id.company_id.name} Payment Reminder</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_insurance_followup"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
+
+    <p>Dear ${object.partner_id.name},</p>
+     <p>
+    This is the 1st reminder mail before 15 days of your insurance policy that your payment date is ${object.date_due} .
+    So Would you please make payment before the ${object.date_due}.
+    </p>
+<br/>
+Thank You,
+<br/>
+   <br/>
+${object.user_id.name}
+
+
+</div>
+            ]]></field>
+        </record>
+        <!--Mail template before 10 dAYS-->
+        <record id="email_template_insurance_followup_level_before10" model="email.template">
+            <field name="name">First polite payment follow-up reminder email Before 10 days</field>
+            <field name="email_from">${object.user_id.email or ''}</field>
+            <field name="subject">${object.user_id.company_id.name} Payment Reminder</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_insurance_followup"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
+
+    <p>Dear ${object.partner_id.name},</p>
+    <p>
+    This is the 1st reminder mail before 10 days of your insurance policy that your payment date is ${object.date_due} .
+    So Would you please make payment before the ${object.date_due}.
+    </p>
+<br/>
+Thank You,
+<br/>
+   <br/>
+${object.user_id.name}
+
+
+</div>
+            ]]></field>
+        </record>
+        <!--Mail template before 5 dAYS-->
+        <record id="email_template_insurance_followup_level_before5" model="email.template">
+            <field name="name">First polite payment follow-up reminder email Before 5 days</field>
+            <field name="email_from">${object.user_id.email or ''}</field>
+            <field name="subject">${object.user_id.company_id.name} Payment Reminder</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_insurance_followup"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
+
+    <p>Dear ${object.partner_id.name},</p>
+    <p>
+    This is the 1st reminder mail before 5 days of your insurance policy that your payment date is ${object.date_due} .
+    So Would you please make payment before the ${object.date_due}.
+    </p>
+<br/>
+Thank You,
+<br/>
+   <br/>
+${object.user_id.name}
+
+
+</div>
+            ]]></field>
+        </record>
+        <!--Mail template After 1 dAYS-->
+        <record id="email_template_insurance_followup_level_after1" model="email.template">
+            <field name="name">First polite payment follow-up reminder email After 1 days</field>
+            <field name="email_from">${object.user_id.email or ''}</field>
+            <field name="subject">${object.user_id.company_id.name} Payment Reminder</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_insurance_followup"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
+    <p>Dear ${object.partner_id.name},</p>
+     <p>
+     This is the last reminder mail for your insurance policy that your payment date is ${object.date_due} which is already due. 
+     So please make the payment as soon as possible otherwise your policy will be cancelled.
+    </p>
+<br/>
+Best Regards,
+<br/>
+   <br/>
+${object.user_id.name}
+
+
+</div>
+            ]]></field>
+        </record>
+        <!--Mail template After 22 dAYS-->
+        <record id="email_template_insurance_followup_level_after22" model="email.template">
+            <field name="name">First polite payment follow-up reminder email After 22 days</field>
+            <field name="email_from">${object.user_id.email or ''}</field>
+            <field name="subject">${object.user_id.company_id.name} Payment Reminder</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="model_id" ref="model_insurance_followup"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
+
+    <p>Dear ${object.partner_id.name},</p>
+    <p>
+    You didn’t make the payment after 22 days of the payment date, So your insurance policy is cancelled.
+    </p>
+<br/>
+Best Regards,
+<br/>
+   <br/>
+${object.user_id.name}
+
+
+</div>
+            ]]></field>
+        </record>
+
+<!--  insurance followup demo data -->
+
+        <record id="demo_insurance_followup1" model="insurance_followup.followup" forcecreate="False">
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="demo_insurance_followup_line1" model="insurance_followup.followup.line" forcecreate="False">
+            <field name="name">Send first reminder email</field>
+            <field name="sequence">1</field>
+            <field name="delay">45</field>
+            <field name="followup_id" ref="demo_insurance_followup1"/>
+            <field name="send-email">True</field>
+            <field name="state">before</field>
+            <field name="email_template_id" ref="email_template_insurance_followup_level_before45"/>
+        </record>
+
+        <record id="demo_insurance_followup_line2" model="insurance_followup.followup.line" forcecreate="False">
+            <field name="name">Send second reminder email</field>
+            <field name="sequence">1</field>
+            <field name="delay">15</field>
+            <field name="followup_id" ref="demo_insurance_followup1"/>
+            <field name="send-email">True</field>
+            <field name="state">before</field>
+            <field name="email_template_id" ref="email_template_insurance_followup_level_before15"/>
+        </record>
+        <record id="demo_insurance_followup_line3" model="insurance_followup.followup.line" forcecreate="False">
+            <field name="name">Send third reminder email</field>
+            <field name="sequence">2</field>
+            <field name="delay">10</field>
+            <field name="followup_id" ref="demo_insurance_followup1"/>
+            <field name="send-email">True</field>
+            <field name="state">before</field>
+            <field name="email_template_id" ref="email_template_insurance_followup_level_before10"/>
+        </record>
+
+        <record id="demo_insurance_followup_line4" model="insurance_followup.followup.line" forcecreate="False">
+            <field name="name">Send fourth reminder email</field>
+            <field name="sequence">3</field>
+            <field name="delay">5</field>
+            <field name="followup_id" ref="demo_insurance_followup1"/>
+            <field name="send-email">True</field>
+            <field name="state">before</field>
+            <field name="email_template_id" ref="email_template_insurance_followup_level_before5"/>
+        </record>
+        <record id="demo_insurance_followup_line5" model="insurance_followup.followup.line" forcecreate="False">
+            <field name="name">Send fifth reminder email</field>
+            <field name="sequence">4</field>
+            <field name="delay">1</field>
+            <field name="followup_id" ref="demo_insurance_followup1"/>
+            <field name="send-email">True</field>
+            <field name="state">after</field>
+            <field name="email_template_id" ref="email_template_insurance_followup_level_after1"/>
+        </record>
+        <record id="demo_insurance_followup_line6" model="insurance_followup.followup.line" forcecreate="False">
+            <field name="name">Send sixth reminder email</field>
+            <field name="sequence">5</field>
+            <field name="delay">22</field>
+            <field name="followup_id" ref="demo_insurance_followup1"/>
+            <field name="send-email">True</field>
+            <field name="state">after</field>
+            <field name="email_template_id" ref="email_template_insurance_followup_level_after22"/>
+        </record>
+ 
+    </data>
+</openerp>

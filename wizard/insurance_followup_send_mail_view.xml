@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="view_insurance_followup_send_mail" model="ir.ui.view">
+            <field name="name">insurance_followup.send.mail.form</field>
+            <field name="model">insurance_followup.send.mail</field>
+            <field name="arch" type="xml">
+            <form string="Send follow-ups">
+                <group col="4">
+                    <field name="followup_id"/>
+                    <field name="date"/>
+                </group>
+                    <p class ="oe_grey">
+                        This action will send follow-up emails, print the letters and
+                        set the manual actions per customer, according to the follow-up levels defined. 
+                    </p>
+                    <footer>
+                        <button name="do_process" string="Send emails" type="object" class="oe_highlight"/>
+                        <button name="print_report" icon="gtk-print" string="Print" type="object"/>
+						<button name="print_all_report" icon="gtk-print" string="Print All" type="object"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+            </form>
+           </field>
+        </record>
+
+        <record id="action_insurance_followup_send_mail" model="ir.actions.act_window">
+            <field name="name">Send Follow-Ups</field>
+            <field name="res_model">insurance_followup.send.mail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+			<field name="view_id" ref="view_insurance_followup_send_mail"/>
+            <field name="target">new</field>
+        </record>
+
+        <record id="view_insurance_followup_report_preference" model="ir.ui.view">
+            <field name="name">insurance_followup.report.preference.form</field>
+            <field name="model">insurance_followup.send.mail</field>
+            <field name="arch" type="xml">
+            <form string="Insurance Report Preference">
+				<group cols="4">
+					<group >
+						<label for="date_start" attrs="{'invisible': [('print_option', '=', 'print_any')]}"/>
+						<div attrs="{'invisible': [('print_option', '=', 'print_any')]}">
+							<field name="date_start" class="oe_inline"/>  -  
+							<field name="date_end" class="oe_inline"/>
+						</div>
+						<label for="print_option"/>
+						<div>
+							<field name="print_option"/>
+						</div>
+					</group>
+					<group></group>
+				</group>
+				<field name="insurance_ids" attrs="{'invisible': [('print_option', '=', 'print_all')]}" domain="[('payment_frequency', '!=', 12)]"/>
+					
+				
+                    <footer>
+						<button name="print_report_preference" icon="gtk-print" string="Print" type="object" class="oe_highlight" attrs="{'invisible': [('print_option', '=', 'print_all')]}" />
+						<button name="print_all_report_date_range" icon="gtk-print" string="Print" type="object" class="oe_highlight" attrs="{'invisible': [('print_option', '=', 'print_any')]}"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+            </form>
+           </field>
+        </record>
+
+        <record id="action_insurance_followup_report_preference" model="ir.actions.act_window">
+            <field name="name">Preference Follow-Ups</field>
+            <field name="res_model">insurance_followup.send.mail</field>
+            <field name="view_type">form</field>
+			<field name="view_id" ref="view_insurance_followup_report_preference"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_insurance_followup_send_mail"
+                  id="insurance_followup_send_mail"
+                  parent="menu_insurance_followup_perent"
+                  name = "Send Emails"
+                  sequence="2"/>
+
+        <menuitem action="action_insurance_followup_report_preference"
+                  id="insurance_followup_send_mail_preference"
+                  parent="menu_insurance_followup_perent"
+                  name = "Insurance Report"
+                  sequence="4"/>
+    </data>
+</openerp>

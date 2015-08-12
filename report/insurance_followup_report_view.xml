@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="insurance_followup_report_template_id">
+            <t t-foreach="ids_to_objects(data['form']['partner_ids'])" t-as="o">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <div class="row col-xs-offset-8 col-xs-4">
+                            <table style="width: 100%; margin-bottom: 30px;">
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-field="o.partner_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-field="o.partner_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-field="o.partner_id.street2"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-field="o.partner_id.zip"/>
+                                        <span t-field="o.partner_id.city"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-if="o.partner_id.state_id">
+                                            <span t-field="o.partner_id.state_id.name"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-if="o.partner_id.country_id">
+                                            <span t-field="o.partner_id.country_id.name"/>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row col-xs-4">
+                            <p t-if="o.partner_id" style="font-size: 15.0; margin-bottom: 50px;">Dear <span t-field="o.partner_id.name"/>,</p>
+                        </div>
+                        <div class="row">
+                            <table style="width: 100%; font-size:15.0;text-align: center;">
+                                <thead>
+                                    <tr style="border-bottom:2px solid black; height: 25px;">
+                                        <th style="width:20%;text-align: center">
+                                            <span>Issue Date</span>
+                                        </th>
+                                        <th style="width:20%; text-align: center;">
+                                            <span>Department</span>
+                                        </th>
+                                        <th style="width:20%; text-align: center;">
+                                            <span>Plan</span>
+                                        </th>
+                                        <th style="width:20%; text-align: center;">
+                                            <span>Payment Date</span>
+                                        </th>
+                                        <th style="width:20%; text-align: center;">
+                                            <span>Amount</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="border-bottom:1px solid black">
+                                    <tr style="height: 50px; text-align: center;">
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.issue_date"/>
+                                        </td>
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.department_id"/>
+                                        </td>
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.plan"/>
+                                        </td>
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.date_due"/>
+                                        </td>
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.amount"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row col-xs-offset-8 col-xs-4">
+                            <table style="font-size:15.0; width: 100%;">
+                                <tr style="border-top: 2px solid black;">
+                                    <td style="padding-left:5px; text-align: left; padding-top:10px">
+                                        <strong>Total: </strong>
+                                    </td>
+                                    <td style="padding-left:80px;text-align: center; padding-top:10px;">
+                                        <span t-field="o.amount"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

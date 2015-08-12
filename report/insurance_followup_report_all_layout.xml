@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="insurance_followup_report_all_external_layout">
+			<!-- Multicompany -->
+			<t t-if="o and 'company_id' in o">
+				<t t-set="company" t-value="o.company_id"></t>
+			</t>
+			<t t-if="not o or not 'company_id' in o">
+				<t t-set="company" t-value="res_company"></t>
+			</t>
+			<t t-foreach="docs" t-as="docs">
+				<t t-call="insurance_management.insurance_followup_report_all_external_layout_header" />
+				<t t-raw="0" />
+			</t>
+		</template>
+
+		<template id="insurance_followup_report_all_external_layout_header">
+			<div class="header">
+				<t t-foreach="docs" t-as="o">
+					<div class="row">
+                        <div class="col-xs-12">
+                            <strong>
+                                <p style="font-size: 30; text-align: center;">
+                                    PAYMENT REMINDER
+                                </p>
+                            </strong>
+                        </div>
+					</div>
+				</t>
+			</div>
+		</template>
+	</data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <report id="insurance_followup_report_id"
+                string="Insurance Followup"
+                model="insurance.followup"
+                report_type="qweb-pdf"
+                name="insurance_management.insurance_followup_report_template_id"
+                file="insurance_management.insurance_followup_report_template_id"
+                auto="False"
+                menu="False"/>
+
+    </data>
+</openerp>
+

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="insurance_followup_report_all_template_id">
+            <t t-foreach="ids_to_objects(data['form']['partner_ids'])" t-as="o">
+                <t t-call="insurance_management.insurance_followup_report_all_external_layout">
+                    <div class="page">
+                        <div class="row col-xs-4">
+                            <div class="row col-xs-4" style="padding-left:20px; margin-bottom: 30px;">
+                                <span t-field="o.issue_date"/>
+                            </div>
+                            <table style="width: 100%; margin-top: 30px;">
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span>Mr / Mrs</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-field="o.partner_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span t-field="o.partner_id.street"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left:5px; text-align: left;">
+                                        <span>Present</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row col-xs-12" style="margin-top: 20px; padding-left: 20px;">
+                            <p style="font-size: 15.0; height: 15px;">
+                                Dear <span t-field="o.partner_id.name"/>, 
+                            </p>
+                            <p style="font-size: 15.0; height: 15px;">It is our pleasure to greet you and wish you success in your daily work.</p>
+                        </div>
+                        <div t-if="ids_to_payment(o)" class="row col-xs-12" style="padding-left: 20px;">
+                            <p style="font-size: 15.0; height: 15px; margin-top: 25px;">Through this we are reporting on the payment of your policy to</p>
+                            <p style="font-size: 15.0; height: 15px;">insurance frequency
+                                <span t-esc="ids_to_payment(o)"/> of the company 
+                                <span t-field="o.user_id.company_id.name"/> as detailed below:
+                            </p>
+                        </div>
+                        
+                        <div t-if="ids_to_payment(o) is None" class="row col-xs-12" style="padding-left: 20px;">
+                            <p style="font-size: 15.0; height: 15px; margin-top: 25px;">Through this we are reporting on the payment of your policy to</p>
+                            <p style="font-size: 15.0; height: 15px;">
+                                the company 
+                                <span t-field="o.user_id.company_id.name"/> as detailed below:
+                            </p>
+                        </div>
+                        
+                        <div class="row col-xs-12">
+                            <table style="width: 100%; font-size:15.0; height: 25px; margin-top: 30px; margin-left: 30px;">
+                                <thead>
+                                    <tr>
+                                        <th style="width:30%;text-align: left">
+                                            <span>Insured</span>
+                                        </th>
+                                        <th style="width:30%; text-align: left;">
+                                            <span>Amount</span>
+                                        </th>
+                                        <th style="width:30%; text-align: left;">
+                                            <span>Expiration Date</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="height: 30px; text-align: left;">
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.partner_id.name"/>
+                                        </td>
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.amount"/>
+                                        </td>
+                                        <td style="padding-top: 15px;">
+                                            <span t-field="o.date_due"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row col-xs-12" style="font-size: 15.0; margin-top: 40px; margin-left: 0px;">
+                            <strong>Policy <span t-field="o.name"/></strong>
+                        </div>
+                        <div t-if="o.notes" class="col-xs-12" style="margin-top: 20px; margin-left: 0px; font-size: 20.0;">
+                            <strong>NOTE: <span t-field="o.notes"/></strong>
+                        </div>
+                        <div class="col-xs-12" style="margin-top: 15px;">
+                            <p style="height: 15px;">If you have any doubts , contact us at <span t-field="o.user_id.company_id.phone"/>
+                            </p>
+                            <strong style="height: 15px;">If you have already made your payment, please disregard it.</strong>
+                            <p style="margin-top: 30px;">Sincerely</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <p style="text-align: center; margin-top: 100px; font-size: 20.0;">Collections Department</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>
