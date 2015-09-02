@@ -30,7 +30,7 @@ when you want to send remainders and it will automatically sends remainders of p
 sending the remainders will be according to follow-up-levels of you company. 
 
 
-![Sending payment remainders](/description/sending_email.png)
+![Sending payment remainders](/description/send_emails.png)
 
 
 Mail regarding payment to the customer on customers email id

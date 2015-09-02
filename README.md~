@@ -19,7 +19,7 @@ form which department insurance is issued and who was the issuer.
 With the above information you can also track the no of payments done by customer at which date and how much amount 
 is paid by the customer.  
 
-![Customer Payment Details](/description/insurance_payment_details.png)
+![Customer Payment DetailsSending payment remainders](/description/insurance_payment_details.png)
 
 ----------------------------------------------------------------
 
@@ -29,7 +29,9 @@ You can also send insurance premium payment remainders to the customer via mail 
 when you want to send remainders and it will automatically sends remainders of payment to all customer the gap between 
 sending the remainders will be according to follow-up-levels of you company. 
 
+
 ![Sending payment remainders](/description/sending_email.png)
+
 
 Mail regarding payment to the customer on customers email id
 
