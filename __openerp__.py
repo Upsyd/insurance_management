@@ -1,24 +1,23 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    This module uses OpenERP, Open Source Management Solution Framework.
+#    Copyright (C) 2015-Today BrowseInfo (<http://www.browseinfo.in>)
 #
 #    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
+#    GNU General Public License for more details.
 #
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
 ##############################################################################
-
 
 {
     'name': 'Insurance Management',
@@ -30,20 +29,20 @@
     'author': 'BrowseInfo',
     'website': 'http://www.browseinfo.in',
     'images': [],
-    'depends': ['account','crm'],
+    'depends': ['email_template', 'mail', 'base'],
     'data': [
-             'security/insurance_followup_scurity.xml',
-             'security/ir.model.access.csv',
-             'insurance_followup_view.xml',
-             'insurance_followup_workflow.xml',
-             'insurance_followup_data.xml',
-             'wizard/insurance_followup_send_mail_view.xml',
-             'report/insurance_followup_report_menu.xml',
-             'report/insurance_followup_report_view.xml',
-             'report/insurance_followup_report_all_menu.xml',
-             'report/insurance_followup_report_all_layout.xml',
-             'report/insurance_followup_report_all_view.xml',
-             ],
+        'security/insurance_followup_scurity.xml',
+        'security/ir.model.access.csv',
+        'insurance_followup_view.xml',
+        'insurance_followup_workflow.xml',
+        'insurance_followup_data.xml',
+        'wizard/insurance_followup_send_mail_view.xml',
+        'report/insurance_followup_report_menu.xml',
+        'report/insurance_followup_report_view.xml',
+        'report/insurance_followup_report_all_menu.xml',
+        'report/insurance_followup_report_all_layout.xml',
+        'report/insurance_followup_report_all_view.xml',
+    ],
     'demo': [],
     'test': [],
     'installable': True,

@@ -82,7 +82,6 @@
     </record>
 
     <!-- Menu  -->
-    <!--menuitem name="Configuration_frequency" parent="base.menu_tools_Insurance" id="menu_insurance_frequency" sequence="17"/-->
     <menuitem name="Frequency" parent="menu_insurance_config" id="menu_payment_frequency" action="action_payment_frequency"/>
 
     <!-- Tree view  -->
@@ -183,7 +182,7 @@
     </record>
 
     <!-- Action  -->
-        <record model="ir.actions.act_window" id="action_Insurance_Insurance">
+    <record model="ir.actions.act_window" id="action_Insurance_Insurance">
         <field name="name">Insurance</field>
         <field name="res_model">insurance.followup</field>
         <field name="view_type">form</field>
