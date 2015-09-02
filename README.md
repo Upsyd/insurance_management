@@ -57,6 +57,6 @@ according to starting or ending date of insurance. you can also set levels of se
 remainders to customer of their payments.you can select gap between sending remainders and chose template of email which will 
 sent to customer 
 
-![Discount on invoice products](/screenshot/followup_settings.png)
+![Discount on invoice products](/description/followup_settings.png)
 
 
