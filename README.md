@@ -8,7 +8,7 @@ where you can find all steps how to use insurance module.
 ### Insurance Details 
 
 in insurance module you can save all details about insurance,due dates of insurance,customers 
-for that and payement details of premium
+for that and payment details of premium
 
 In this form you can store details of insurance,customer,agent of that insurance basic details of customer,
 issued date of insurance no of payments and expiered date of customers credit card,also you can track
